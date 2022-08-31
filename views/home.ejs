@@ -1,0 +1,19 @@
+<body>
+  <h1>This is the home page</h1>
+  <h2>This is where i'll display archives and a create button</h2>
+  <h3>This is where the users will go after they've successfully logged in</h3>
+  <a href="/posts">Add Journal Entry</a>
+
+  <ul>
+    <% posts.forEach(function(t) { %>
+      <li>
+        Entry: <%= t.entry %>
+          - 
+          Id: <%= t.id %>
+          - 
+          Date: <%= t.date %>  
+          <a href="/posts/<%= t.id %>/edit"><%= t.entry %> Edit</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>

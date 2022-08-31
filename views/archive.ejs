@@ -1,0 +1,16 @@
+<body>
+  <h1>This is where a user see all journal entries</h1>
+  <h2>They can click to edit an entry</h2>
+  <ul>
+    <% posts.forEach(function(t) { %>
+      <li>
+        Entry: <%= t.entry %>
+          - 
+          Id: <%= t.id %>
+          - 
+          Date: <%= t.date %>  
+          <a href="/posts/<%= t.id %>/edit"><%= t.entry %> Edit</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
