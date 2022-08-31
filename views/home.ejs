@@ -1,19 +1,26 @@
-<body>
-  <h1>This is the home page</h1>
-  <h2>This is where i'll display archives and a create button</h2>
+<%- include('partials/header') %>
+
+<h2>This is where i'll display all entries for the user and a create button</h2>
   <h3>This is where the users will go after they've successfully logged in</h3>
+  <h3>This is where they also go when they've made a journal entry</h3>
   <a href="/posts">Add Journal Entry</a>
 
-  <ul>
-    <% posts.forEach(function(t) { %>
-      <li>
-        Entry: <%= t.entry %>
-          - 
-          Id: <%= t.id %>
-          - 
-          Date: <%= t.date %>  
-          <a href="/posts/<%= t.id %>/edit"><%= t.entry %> Edit</a>
-      </li>
-    <% }); %>
-  </ul>
-</body>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Content</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% results.forEach(function(m) { %>
+        <tr>
+          <td><%= m.content %></td>
+          <td><%= m.date %></td>
+          <td><a href="/posts/<%= m._id %>">DETAILS</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+<%- include('partials/footer') %>

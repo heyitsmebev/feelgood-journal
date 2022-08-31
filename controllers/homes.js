@@ -1,18 +1,20 @@
 const Home = require('../models/post');
 
-function getAll() {
-    return postsdb;
-  }
-
 function index(req, res) {
-    res.render('home', { //render is from the view
-      posts: Home.getAll() //this posts is being passed to the view
-    });
-} 
+  Home.find({}, function (err, results) {
+    res.render("home", { title: "This is home page", results });
+  });
+}
 
+function show(req, res) {
+  Home.findById(req.params.id, function (err, results) {
+    res.render("home", { title: "Journal Entry Detail", results });
+    console.log(req.params.id)
 
+  });
+}
 
 module.exports = {
-    getAll,
-    index
-  };
+  index,
+  show
+};

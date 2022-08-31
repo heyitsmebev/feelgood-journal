@@ -4,14 +4,20 @@ var router = express.Router();
 var postsCtrl = require('../controllers/posts');
 
 router.get('/', postsCtrl.index);
-router.get('/new', postsCtrl.new);
+router.get("/new", postsCtrl.new);
+router.post("/", postsCtrl.create);
+router.get("/:id", postsCtrl.show);
+// router.get("/:id", moviesCtrl.show);
 
- // All actual paths start with "/posts"
-router.get('/:id', postsCtrl.show);
-router.post('/', postsCtrl.create);
+// router.post('/posts/:id', postsCtrl.create);
+// router.get('/new', postsCtrl.new);
 
-router.get('/:id/edit', postsCtrl.edit);
+//  // All actual paths start with "/posts"
+// router.get('/:id', postsCtrl.show);
+// router.post('/', postsCtrl.create);
 
-router.put('/:id', postsCtrl.change);
+// router.get('/:id/edit', postsCtrl.edit);
+
+// router.put('/:id', postsCtrl.change);
 
 module.exports = router;

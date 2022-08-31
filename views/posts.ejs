@@ -1,11 +1,12 @@
-<body>
+<%- include('partials/header') %>
+
   <h1>This is where a user will post a new journal entry</h1>
   <h2>This is where I will put a form to submit and add to database</h2>
-<h1>Today's Journal Entry</h1>
-<h4>Date: 9/1/2022 </h4>
-<form action="/posts" method="POST" autocomplete="off" >
+
+<form action="/posts/<%= posts.id %>" method="POST" autocomplete="off" >
   <label>I am grateful for...</label><br>
-  <input type="text" id="fname" name="entry"><br>
+  <input type="text" id="fname" name="content"><br>
   <button type="submit">Submit Journal Entry</button>
 </form>
-</body>
+
+<%- include('partials/footer') %>

@@ -5,5 +5,6 @@ var homesCtrl = require('../controllers/homes');
 
 router.get('/', homesCtrl.index);
  // All actual paths start with "/posts"
+ router.get("/:id", homesCtrl.show);
 
 module.exports = router;

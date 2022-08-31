@@ -1,47 +1,37 @@
 const Post = require('../models/post');
 
+
 function index(req, res) {
-    res.render('post', { //render is from the view
-      posts: Post.getAll() //this posts is being passed to the view
-    });
-} 
+  Post.find({}, function (err, posts) {
+    res.render("posts", { title: "All Entries", posts });
+  });
+}
 
 function show(req, res) {
-  res.render('home', {
-      post: Post.getOne(req.params.id),
-      //id matches the url 
-    // Would like to display the number of the todo within the list
-    //getOne is from the model 
-    postNum: Post.getAll().findIndex(post => post.id === parseInt(req.params.id)) + 1
+  Post.findById(req.params.id, function (err, results) {
+    res.render("edit", { title: "Journal Entry Detail", results });
   });
 }
 
 function newPost(req, res) {
-  res.render('post')
+  res.render("posts", { title: "Add Journal Entry For Today" });
 }
 
 function create(req, res) {
-  Post.create(req.body);
-  res.redirect('home')
+  var post = new Post(req.body);
+  post.save(function (err) { //save is a method in mongoose that saves to database
+    // one way to handle errors
+    if (err) return res.redirect("/");
+    console.log(post);
+    // for now, redirect right back to new.ejs
+    res.redirect("/home");
+  });
 }
 
-function editPost(req, res) {
-  res.render('edit', {
-    post: Post.getOne(req.params.id)
-  })
-}
-
-function change(req, res) {
-  console.log(req.body)
-  Post.changeOne(req.body, req.params.id)
-  res.redirect('/home')
-}
 
 module.exports = {
-    index,
-    show,
-    new: newPost,
-    create,
-    edit: editPost,
-    change
+  index,
+  new: newPost,
+  create,
+  show
   };
