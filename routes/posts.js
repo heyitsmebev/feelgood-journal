@@ -8,17 +8,7 @@ router.get("/new", postsCtrl.new);
 router.post("/", postsCtrl.create);
 router.get("/:id/edit", postsCtrl.show);
 router.put("/:id/edit", postsCtrl.update);
-// router.get("/:id", moviesCtrl.show);
+router.delete("/:id/edit", postsCtrl.delete);
 
-// router.post('/posts/:id', postsCtrl.create);
-// router.get('/new', postsCtrl.new);
-
-//  // All actual paths start with "/posts"
-// router.get('/:id', postsCtrl.show);
-// router.post('/', postsCtrl.create);
-
-// router.get('/:id/edit', postsCtrl.edit);
-
-// router.put('/:id', postsCtrl.change);
 
 module.exports = router;

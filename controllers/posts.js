@@ -28,15 +28,37 @@ function create(req, res) {
 }
 
 function updatePost(req,res){
-  console.log("this is the body " + req.body)
-
   Post.findByIdAndUpdate(req.params.id, req.body, function(err, results){
-    if (err) {
-      return res.redirect("error");
-    } else {
-      
-      res.redirect('/story');
-      console.log("this is the body " + req.body)
+    res.redirect('/home');
+});
+}
+
+function deletePost(req, res, next) {
+  Post.findOne({'posts._id': req.params.id}) //checking the database with the id in url 
+  .then(function(results) {
+    const result = post.results.id(req.params.id)
+    //results is from results._id on line 27
+    // if(!result.user.equals(req.user._id)) return res.redirect(`/posts/${post._id}`) //${post} reference the post on line 28
+    // if the user is not equal to the current user object, we will redirect 
+    result.remove();
+    post.save().then(function() {
+      res.redirect(`/posts/${posts._id}`)
+    }).catch(function (error) {
+      return next(error) //up to you, could redirec to homepage
+    })
+    //we are saving teh data. save() is also a callback function, a promise 
+
+  })
+}
+
+function deletePost(req, res, next) {
+  Post.findByIdAndDelete(req.params.id, function (err, results) {
+    if (err){
+        console.log(err)
+    }
+    else{
+      res.redirect('/home');
+      console.log("Deleted : ", results);
     }
 });
 }
@@ -47,5 +69,6 @@ module.exports = {
   new: newPost,
   create,
   show,
-  update: updatePost
+  update: updatePost,
+  delete: deletePost
   };

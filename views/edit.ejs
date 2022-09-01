@@ -1,9 +1,12 @@
 <%- include('partials/header') %>
 
     <div>Date: <%= results.date %></div>
-      <form id="add-review-form" method="POST" action="/posts/<%= results._id %>/edit?_methond=put">
+      <form id="add-review-form" method="POST" action="/posts/<%= results._id %>/edit?_method=put">
         <label>Content:</label>
-        <input name="content" > 
+        <input name="content" value="<%= results.content %>"> 
         <input type="submit" value="Submit">
       </form>
+        <form action="/posts/<%= results._id %>/edit?_method=DELETE" method="POST">
+            <button type="submit">Delete Journal Entry</button>
+        </form>
 <%- include('partials/footer') %>
