@@ -6,15 +6,6 @@ function index(req, res) {
   });
 }
 
-function show(req, res) {
-  Home.findById(req.params.id, function (err, results) {
-    res.render("home", { title: "Journal Entry Detail", results });
-    console.log(req.params.id)
-
-  });
-}
-
 module.exports = {
   index,
-  show
 };

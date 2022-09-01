@@ -1,13 +1,9 @@
-<%- include('../partials/header') %>
+<%- include('partials/header') %>
 
-    <h1>Edit Journal Entry <%= post.date %></h1>
-    <form action="/posts/<%= post.id %>" class="put-form" method="POST" autocomplete="off">
-        <!-- method=PUT this is a custom method so we have to do it
-        like this because it's not native to express. Similar to Delete  -->
-        <input type="text" name="cash" value="<%= post.entry %>">
-      <button type="submit">submit</button>
-    </form>
-
-
-
-<%- include('../partials/footer') %>
+    <div>Date: <%= results.date %></div>
+      <form id="add-review-form" method="POST" action="/posts/<%= results._id %>/edit?_methond=put">
+        <label>Content:</label>
+        <input name="content" > 
+        <input type="submit" value="Submit">
+      </form>
+<%- include('partials/footer') %>
