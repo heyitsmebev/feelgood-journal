@@ -44,5 +44,5 @@ Beverly Nguyen
 
 ## Wireframe
 https://www.figma.com/file/Y10fjbYlvUsBUue5ZRklGO/Wireframing-(Feel-Good-Project)?node-id=0%3A1
-![gamescreenshot](/public/images/wireframe.png)
-(/public/images/wireframe.png)
+![wireframe](/public/images/wireframe.png)
+
