@@ -3,7 +3,7 @@ const Post = require('../models/post');
 
 function index(req, res) {
   Post.find({}, function (err, posts) {
-    res.render("posts", { title: "INDEX", posts });
+    res.render("posts", { title: "Mood Journal | Entry", posts });
   });
 }
 
