@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
+<% if (user) { %>
 <% if (user && user._id.equals(results.user)) { %>
 
 <div class="col-lg-8 mx-auto p-3 py-md-5 bg-white">
@@ -23,7 +24,13 @@
   </form>
 </div>
 <% } %>
-
-
+<% } else { %>
+  <div class="col-lg-8 mx-auto p-3 py-md-5 bg-white">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="/auth/google" class="btn btn-warning">Start Today's Journal</a>
+      <a href="/auth/google" class="btn btn-outline-secondary">Login</a>
+    </div>
+  </div>
+  <% } %>
 
 <%- include('partials/footer') %>

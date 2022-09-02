@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
+<% if (user) { %>
 <div class="jumbotron">
   <div class="container">
     <h1 class="display-3">Hello</h1>
@@ -34,8 +35,16 @@
     </div>
   </div>
 </div>  
-
-
+<% } else { %>
+  <div class="col-lg-8 mx-auto p-3 py-md-5 bg-white">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="/auth/google" class="btn btn-warning">Start Today's Journal</a>
+      <a href="/auth/google" class="btn btn-outline-secondary">Login</a>
+    </div>
+  </div>
+  <% } %>
 
     <!-- <a href="/archives">Show all Archive</a> -->
 <%- include('partials/footer') %>
+
+ 
