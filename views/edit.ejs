@@ -6,7 +6,15 @@
         <input name="content" value="<%= results.content %>"> 
         <input type="submit" value="Submit">
       </form>
+      <form id="add-review-form" method="POST" action="/posts/<%= results._id %>/affirmations">
+        <label>Affirmation:</label>
+        <input type="text" id="fname" name="affirmation"><br>
+        <input type="submit" value="Add Affirmation">
+      </form>
+      <% if (user && user._id.equals(results.user)) { %>
         <form action="/posts/<%= results._id %>/edit?_method=DELETE" method="POST">
-            <button type="submit">Delete Journal Entry</button>
-        </form>
+          <button type="submit">Delete Journal Entry</button>
+      </form>
+    <% } %>
+<a href=""></a>
 <%- include('partials/footer') %>

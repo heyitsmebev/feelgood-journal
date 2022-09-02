@@ -1,17 +1,11 @@
 const Archives = require('../models/post');
 
-function getAll() {
-    return postsdb;
-  }
-
 function index(req, res) {
-    res.render('archive', { //render post from the view's folder 
-      posts: Archives.getAll() //this "posts" is being passed to the view
-    });
-} 
-
+  Archives.find({}, function (err, results) {
+    res.render("archive", { title: "archive", results });
+  });
+}
 
 module.exports = {
-    getAll,
-    index
-  };
+  index,
+};

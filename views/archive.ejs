@@ -1,16 +1,24 @@
 <body>
   <h1>This is where a user see all journal entries</h1>
   <h2>They can click to edit an entry</h2>
-  <ul>
-    <% posts.forEach(function(t) { %>
-      <li>
-        Entry: <%= t.entry %>
-          - 
-          Id: <%= t.id %>
-          - 
-          Date: <%= t.date %>  
-          <a href="/posts/<%= t.id %>/edit"><%= t.entry %> Edit</a>
-      </li>
-    <% }); %>
-  </ul>
+  <% results.forEach(function(m) { %>
+    <% if (user && user._id.equals(m.user)) { %>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Content</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= m.content %></td>
+          <td><%= m.date.getMonth() %></td>
+          <td><a href="/posts/<%= m._id %>/edit">DETAILS</a></td>
+        </tr>
+        <% } %>
+      <% }); %>
+      </tbody>
+    </table>
 </body>

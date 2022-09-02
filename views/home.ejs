@@ -13,14 +13,19 @@
         <th></th>
       </tr>
     </thead>
+
     <tbody>
       <% results.forEach(function(m) { %>
+        <% if (user && user._id.equals(m.user)) { %>
         <tr>
           <td><%= m.content %></td>
-          <td><%= m.date %></td>
+          <td><%= m.date.toDateString() %></td>
           <td><a href="/posts/<%= m._id %>/edit">DETAILS</a></td>
         </tr>
-        <% }); %>
+        <% } %>
+      <% }); %>
       </tbody>
     </table>
+
+    <a href="/archives">Show all Archive</a>
 <%- include('partials/footer') %>

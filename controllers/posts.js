@@ -3,27 +3,30 @@ const Post = require('../models/post');
 
 function index(req, res) {
   Post.find({}, function (err, posts) {
-    res.render("posts", { title: "All Entries", posts });
+    res.render("posts", { title: "INDEX", posts });
   });
 }
 
 function show(req, res) {
   Post.findById(req.params.id, function (err, results) {
-    res.render("edit", { title: "Journal Entry Detail", results });
+    res.render("edit", { title: "SHOW", results });
   });
 }
 
 function newPost(req, res) {
-  res.render("posts", { title: "Add Journal Entry For Today" });
+  res.render("posts", { title: "NEW" });
 }
 
 function create(req, res) {
-  var post = new Post(req.body);
-  post.save(function (err) { //save is a method in mongoose that saves to database
-    // one way to handle errors
-    if (err) return res.redirect("/");
-    // for now, redirect right back to new.ejs
-    res.redirect("/home");
+  const post = new Post(req.body);
+  post.user = req.user._id;
+  post.userName = req.user.name;
+  post.userAvatar = req.user.avatar;
+  console.log(req.body);
+  console.log(post)
+  post.save(function(err) {
+  if (err) return res.render('posts/new', { title: 'new request form'});
+  res.redirect('/home');
   });
 }
 
