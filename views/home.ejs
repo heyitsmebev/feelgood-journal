@@ -7,19 +7,30 @@
   </div>
 </div>
 <div class="container col-xxl-10 px-4 py-5">
-  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <div class="col-lg-6 mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center">
-      <h2 class="display-5">DAILY JOURNAL ENTRIES</h2>
+  <div class="row flex-lg-row-reverse align-items-center g-5">
+    <div class="col-lg-6 mr-md-3 pt-3 px-3 pt-md-5 px-md-5">
+      <h2 class="display-5 text-center">DAILY JOURNAL ENTRIES</h2>
+
       <% results.forEach(function(m) { %>
         <% if (user && user._id.equals(m.user)) { %>
-          <span class="text-muted"><%= m.date.toDateString() %></span><a class="link-dark " href="/posts/<%= m._id %>/edit"><p class="lead"><%= m.content %></p> </a>
+          <div class="list-group w-auto" style="--bs-list-group-bg: none;">
+            <a href="/posts/<%= m._id %>/edit" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+              <div class="d-flex gap-2 w-100 justify-content-between">
+                <h6 class="mb-0"><%= m.content %></h6>
+                <small class="opacity-50 text-nowrap"><%= m.date.toDateString() %></small>
+              </div>
+            </a>
+          </div>
         <% } %>
       <% }); %>
-      <p><a class="btn btn-warning" href="/posts" role="button"> Continue Today's Journal »</a></p>
-    </div>
-    <div class="col-lg-6 bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-white text-center">
-      <h1 class="display-2 fw-bold lh-1 mb-3 ">You only live once, but if you do it right, once is enough.</h1>
-      <p class="lead">MAE WEST</p>
+      <!-- <br>
+      <div><a class="btn btn-warning" href="/posts" role="button"> Continue Today's Journal »</a></div> -->
+
+     </div>
+    <div class="col-lg-6 bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-white text-center border rounded-3">
+      <h1 class="display-2 fw-bold lh-1 mb-3 ">Those that are a friend to themselves
+        are sure to be a friend to all.</h1>
+      <p class="lead">LUCIUS ANNAEUS SENECA</p>
     </div>
   </div>
 </div>  

@@ -1,12 +1,14 @@
 <%- include('partials/header') %>
 
-<form action="/posts/<%= posts.id %>" method="POST" autocomplete="off" >
-  <label>I am grateful for...</label><br>
-  <input type="text" id="fname" name="content"><br>
-  <button type="submit">Submit Journal Entry</button>
+<div class="col-lg-8 mx-auto p-3 py-md-5 bg-white">
+  <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
+    <span class="fs-4">Today's Journal Entry</span>
+  </div>
+  <form class="form-group" action="/posts/<%= posts.id %>" method="POST" autocomplete="off" >
 
+  <p class="col-md-8">I am grateful for...</p>
+  <input class="form-control form-control-lg" type="textarea" rows="3" name="content"><br>
+  <button type="submit" class="btn btn-warning">Submit Journal Entry</button>
 </form>
-
-
-
+</div>
 <%- include('partials/footer') %>
