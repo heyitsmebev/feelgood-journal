@@ -11,10 +11,12 @@ const affirmationSchema = new Schema({
 });
 
 const journalSchema = new Schema({
-  content: {
+  grateful1: {
     type: String,
     required: true
   },
+  grateful2: String,
+  grateful3: String,
   date: {
     type: Date,
     default: function () {

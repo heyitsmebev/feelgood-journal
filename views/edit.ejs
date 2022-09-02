@@ -9,13 +9,15 @@
 
   <form class="form-group" method="POST" action="/posts/<%= results._id %>/edit?_method=put" autocomplete="off" >
     <p class="col-md-8">I am grateful for...</p>
-    <input class="form-control form-control-lg" type="textarea" rows="3" name="content" value="<%= results.content %>"><br>
+    <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful1" value="<%= results.grateful1 %>"><br>
+    <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful2" value="<%= results.grateful2 %>"><br>
+    <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful3" value="<%= results.grateful3 %>"><br>
     <button type="submit" value="Submit" class="btn btn-warning">Submit Update</button>
   </form>
   <hr class="col-3 col-md-2 mb-5">
   <form class="form-group" method="POST" action="/posts/<%= results._id %>/affirmations" autocomplete="off" >
     <p class="col-md-8">Daily affirmations. I am...</p>
-    <input class="form-control form-control-lg" type="textarea" rows="3" name="affirmation" value="add affirmation"><br>
+    <input class="form-control form-control-lg" type="textarea" rows="3" name="affirmation" placeholder="write a statement"><br>
     <button type="submit"  class="btn btn-info">Add Affirmation</button>
   </form>
   <hr class="col-3 col-md-2 mb-5">

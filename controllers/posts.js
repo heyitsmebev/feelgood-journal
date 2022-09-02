@@ -9,12 +9,12 @@ function index(req, res) {
 
 function show(req, res) {
   Post.findById(req.params.id, function (err, results) {
-    res.render("edit", { title: "SHOW", results });
+    res.render("edit", { title: "Mood Journal | Entry", results });
   });
 }
 
 function newPost(req, res) {
-  res.render("posts", { title: "NEW" });
+  res.render("posts", { title: "Mood Journal | Entry" });
 }
 
 function create(req, res) {
@@ -22,10 +22,9 @@ function create(req, res) {
   post.user = req.user._id;
   post.userName = req.user.name;
   post.userAvatar = req.user.avatar;
-  console.log(req.body);
-  console.log(post)
+  console.log(req.body)
   post.save(function(err) {
-  if (err) return res.render('posts/new', { title: 'new request form'});
+  if (err) return res.render('posts/new', { title: 'Mood Journal | Entry'});
   res.redirect('/home');
   });
 }
