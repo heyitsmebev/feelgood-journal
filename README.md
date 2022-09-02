@@ -1,7 +1,7 @@
 
 # Mood Journal!
 
-![gamescreenshot](/assets/images/screenshare.gif)
+![cover](/public/images/cover.png)
 
 ## 📖 Table of Contents
  1. ➤ [About The Project](#about-the-project)  
@@ -45,4 +45,5 @@ Beverly Nguyen
 ## Wireframe
 https://www.figma.com/file/Y10fjbYlvUsBUue5ZRklGO/Wireframing-(Feel-Good-Project)?node-id=0%3A1
 ![wireframe](/public/images/wireframe.png)
+
 

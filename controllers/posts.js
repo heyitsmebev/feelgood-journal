@@ -40,11 +40,9 @@ function updatePost(req,res){
 function deletePost(req, res, next) {
   Post.findByIdAndDelete(req.params.id, function (err, results) {
     if (err){
-        console.log(err)
     }
     else{
       res.redirect('/home');
-      console.log("Deleted : ", results);
     }
 });
 }
