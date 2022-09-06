@@ -6,21 +6,40 @@
   <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
     <span class="fs-4">Date: <%= results.date.toDateString() %></span>
   </div>
-
   <form class="form-group" method="POST" action="/posts/<%= results._id %>/edit?_method=put" autocomplete="off" >
     <p class="col-md-8">I am grateful for...</p>
-    <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful1" value="<%= results.grateful1 %>"><br>
-    <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful2" value="<%= results.grateful2 %>"><br>
-    <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful3" value="<%= results.grateful3 %>"><br>
+    <input class="form-control form-control-sm" type="textarea" rows="3" name="grateful1" value="<%= results.grateful1 %>">
+    <input class="form-control form-control-sm" type="textarea" rows="3" name="grateful2" value="<%= results.grateful2 %>">
+    <input class="form-control form-control-sm" type="textarea" rows="3" name="grateful3" value="<%= results.grateful3 %>">
+    <br>
+    <p class="col-md-8">What would make today great?</p>
+    <input class="form-control form-control-sm" type="textarea" rows="3" name="great1" value="<%= results.great1 %>">
+    <input class="form-control form-control-sm" type="textarea" rows="3" name="great2" value="<%= results.great2 %>">
+    <input class="form-control form-control-sm" type="textarea" rows="3" name="great3" value="<%= results.great3 %>">
+    <br>
+    <div class="p-3 mb-2 bg-dark text-white" style="--bs-bg-opacity: 0.9;">
+      <p class="col-md-8">3 Amazing things that happened today...</p>
+      <input class="form-control form-control-sm" type="textarea" rows="3" name="amazing1" value="<%= results.amazing1 %>">
+      <input class="form-control form-control-sm" type="textarea" rows="3" name="amazing2" value="<%= results.amazing2 %>">
+      <input class="form-control form-control-sm" type="textarea" rows="3" name="amazing3" value="<%= results.amazing3 %>">
+      <br>
+      <p class="col-md-8">How could I have made today even better?</p>
+      <input class="form-control form-control-sm" type="textarea" rows="3" name="better1" value="<%= results.better1 %>">
+      <input class="form-control form-control-sm" type="textarea" rows="3" name="better2" value="<%= results.better2 %>">
+      <br>
+    </div>
+
     <button type="submit" value="Submit" class="btn btn-warning">Submit Update</button>
   </form>
-  <hr class="col-3 col-md-2 mb-5">
-  <form class="form-group" method="POST" action="/posts/<%= results._id %>/affirmations" autocomplete="off" >
-    <p class="col-md-8">Daily affirmations. I am...</p>
-    <input class="form-control form-control-lg" type="textarea" rows="3" name="affirmation" placeholder="write a statement"><br>
-    <button type="submit"  class="btn btn-info">Add Affirmation</button>
-  </form>
-  <hr class="col-3 col-md-2 mb-5">
+  <hr class="col-md-12">
+  <div class="p-3 mb-2 bg-light text-dark">
+    <form class="form-group" method="POST" action="/posts/<%= results._id %>/affirmations" autocomplete="off" >
+      <p class="col-md-8">Daily affirmations. I am...</p>
+      <input class="form-control form-control-lg" type="textarea" rows="3" name="affirmation" placeholder="write a statement"><br>
+      <button type="submit"  class="btn btn-info">Add Affirmation</button>
+    </form>
+    <hr class="col-md-12">
+  </div>
   <form action="/posts/<%= results._id %>/edit?_method=DELETE" method="POST">
     <button type="submit" class="btn btn-light">Delete Journal Entry</button>
   </form>

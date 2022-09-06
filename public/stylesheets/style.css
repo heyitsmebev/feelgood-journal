@@ -5,6 +5,10 @@
     background-color: #fbfdff;
     border-radius: 0.3rem;
 }
+.form-control-sm {
+  margin: 5px 0px;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

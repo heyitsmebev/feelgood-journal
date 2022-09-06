@@ -7,13 +7,12 @@
     <p><a class="btn btn-warning" href="/posts" role="button"> Write Today's Journal »</a></p>
   </div>
 </div>
+<% results.forEach(function(m) { %>
+  <% if (user && user._id.equals(m.user)) { %>
 <div class="container col-xxl-10 px-4 py-5">
   <div class="row flex-lg-row-reverse align-items-center g-5">
     <div class="col-lg-6 mr-md-3 pt-3 px-3 pt-md-5 px-md-5">
       <h2 class="display-5 text-center">DAILY JOURNAL ENTRIES</h2>
-
-      <% results.forEach(function(m) { %>
-        <% if (user && user._id.equals(m.user)) { %>
           <div class="list-group w-auto" style="--bs-list-group-bg: none;">
             <a href="/posts/<%= m._id %>/edit" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
               <div class="d-flex gap-2 w-100 justify-content-between">
@@ -22,8 +21,6 @@
               </div>
             </a>
           </div>
-        <% } %>
-      <% }); %>
      </div>
     <div class="col-lg-6 bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-white text-center border rounded-3">
       <h1 class="display-2 fw-bold lh-1 mb-3 ">Those that are a friend to themselves
@@ -32,6 +29,8 @@
     </div>
   </div>
 </div>  
+<% } %>
+<% }); %>
 <% } else { %>
   <div class="col-lg-8 mx-auto p-3 py-md-5 bg-white">
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">

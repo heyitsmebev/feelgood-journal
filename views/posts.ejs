@@ -5,15 +5,25 @@
     <span class="fs-4">Today's Journal Entry</span>
   </div>
   <form class="form-group" action="/posts/<%= posts.id %>" method="POST" autocomplete="off" >
-
   <p class="col-md-8">I am grateful for...</p>
-  <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful1" placeholder="1."><br>
-  <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful2" placeholder="2."><br>
-  <input class="form-control form-control-lg" type="textarea" rows="3" name="grateful3" placeholder="3."><br>
-  <!-- <p class="col-md-8">What would make today great?</p>
-  <input class="form-control form-control-lg" type="textarea" rows="3" name="content" placeholder="1."><br>
-  <input class="form-control form-control-lg" type="textarea" rows="3" placeholder="2."><br>
-  <input class="form-control form-control-lg" type="textarea" rows="3" placeholder="3."><br> -->
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="grateful1" placeholder="1.">
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="grateful2" placeholder="2.">
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="grateful3" placeholder="3.">
+  <br>
+  <p class="col-md-8">What would make today great?</p>
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="great1" placeholder="1.">
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="great2" placeholder="2.">
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="great3" placeholder="3.">
+  <br>
+  <p class="col-md-8">3 Amazing things that happened today...</p>
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="amazing1" placeholder="1.">
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="amazing2" placeholder="2.">
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="amazing3" placeholder="3.">
+  <br>
+  <p class="col-md-8">How could I have made today even better?</p>
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="better1" placeholder="1.">
+  <input class="form-control form-control-sm" type="textarea" rows="3" name="better2" placeholder="2.">
+  <br>
   <button type="submit" class="btn btn-warning">Submit Journal Entry</button>
 </form>
 </div>

@@ -17,6 +17,14 @@ const journalSchema = new Schema({
   },
   grateful2: String,
   grateful3: String,
+  great1: String,
+  great2: String,
+  great3: String,
+  amazing1: String,
+  amazing2: String,
+  amazing3: String,
+  better1: String,
+  better2: String,
   date: {
     type: Date,
     default: function () {
